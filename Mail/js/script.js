@@ -5,20 +5,22 @@ let emailElement = document.querySelector('input[name="email"]')
 
 let submitelement = document.querySelector('input[name="checker"]')
 let emaillUser = ''
+let currenMail
 
 submitelement.addEventListener('click', function() { 
     emaillUser = emailElement.value
     
-    if (emaillUser === mails[0] || emaillUser === mails[1] || emaillUser === mails[2]) {
-        console.log('Accesso riuscito')
-    } else {
-        console.log('Accesso negato')
+    for (i = 0; i < mails.length; i++) {
+        currenMail = mails[i]
+
+        if (currenMail === emaillUser) {
+            currenMail = true
+        } 
     }
 
-    
-    
+    if (currenMail) {
+        console.log('mail trovata')
+    } else {
+        console.log('mail non trovata')
+    }
 })
-
-//verificare che la mail sia nell'arrey dei registrati
-
-// stamapre l'esito dell'operazione
